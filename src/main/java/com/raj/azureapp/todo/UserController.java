@@ -16,6 +16,19 @@ public class UserController
     UserRepository userRepository;
 
 
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        try{
+            User newUser = new User(user.getId(),user.getFirstName(),user.getLastName(), user.getAddress());
+            userRepository.save(newUser);
+            return new ResponseEntity<>(newUser,HttpStatus.CREATED);
+        }catch (Exception e) {
+            throw  new RuntimeException();
+        }
+    }
+
+
+
     @GetMapping({"/"})
     public ResponseEntity<List<User>> getAllUsers() {
         try{
