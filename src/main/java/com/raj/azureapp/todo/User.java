@@ -13,7 +13,6 @@ public class User {
     @PartitionKey
     private String lastName;
     private String address;
-
     public User() {
 
     }
