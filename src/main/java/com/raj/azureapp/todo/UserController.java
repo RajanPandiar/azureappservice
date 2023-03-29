@@ -27,8 +27,6 @@ public class UserController
         }
     }
 
-
-
     @GetMapping({"/"})
     public ResponseEntity<List<User>> getAllUsers() {
         try{
