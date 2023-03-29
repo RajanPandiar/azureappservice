@@ -44,14 +44,8 @@ public class UserController
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") String id) {
         try{
-
             Optional<User> user  = userRepository.findById(id);
-            if (user.isPresent()) {
-                return new ResponseEntity<>(user.get(),HttpStatus.OK);
-            }
-            else  {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
+            return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NO_CONTENT));
         }catch (Exception e) {
             throw new RuntimeException();
         }
