@@ -1,2 +1,0 @@
-# azureappservice
-azure app service
