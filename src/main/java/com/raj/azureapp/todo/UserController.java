@@ -7,18 +7,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController
 {
 
-    @GetMapping("/")
-    public String sayHello() {
-        return "Hello from Azure Devops";
+    @Autowired
+    UserRepository userRepository;
+
+
+    @GetMapping({"/"})
+    public ResponseEntity<List<User>> getAllUsers() {
+        try{
+            List<User> usersList = new ArrayList<User>();
+            userRepository.findAll().forEach(usersList::add);
+            return new ResponseEntity<>(usersList, HttpStatus.OK);
+        }catch (Exception e) {
+            throw new RuntimeException();
+        }
     }
-
-
-
 
 }
