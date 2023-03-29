@@ -11,7 +11,6 @@ import java.util.List;
 @RestController
 public class UserController
 {
-
     @Autowired
     UserRepository userRepository;
 
@@ -19,6 +18,7 @@ public class UserController
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         try{
+            System.out.println("Hi There");
             User newUser = new User(user.getId(),user.getFirstName(),user.getLastName(), user.getAddress());
             userRepository.save(newUser);
             return new ResponseEntity<>(newUser,HttpStatus.CREATED);
