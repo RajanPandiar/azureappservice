@@ -16,7 +16,6 @@ import reactor.core.publisher.Mono;
 import java.util.Optional;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = UserController.class)
 public class TodoApplication{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(TodoApplication.class);
