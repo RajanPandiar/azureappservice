@@ -28,9 +28,9 @@ public class UserController
     }
 
     @GetMapping({"/"})
-    public ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<User>> getAllUsers() {
         try{
-            List<User> usersList = new ArrayList<User>();
+            List<User> usersList = new ArrayList<>();
             userRepository.findAll().forEach(usersList::add);
             return new ResponseEntity<>(usersList, HttpStatus.OK);
         }catch (Exception e) {
