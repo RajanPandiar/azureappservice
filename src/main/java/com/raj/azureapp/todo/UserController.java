@@ -28,7 +28,7 @@ public class UserController
     }
 
     @GetMapping({"/"})
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<User>> getUsers() {
         try{
             List<User> usersList = new ArrayList<User>();
             userRepository.findAll().forEach(usersList::add);
