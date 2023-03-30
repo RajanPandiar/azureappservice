@@ -54,36 +54,36 @@
         <groupId>org.springframework.boot</groupId>  
         <artifactId>spring-boot-maven-plugin</artifactId> 
       </plugin>  
-      <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>2.5.0</version>
-        <configuration>
-          <schemaVersion>v2</schemaVersion>
-          <subscriptionId>96a64239-0d04-4f64-818d-1f5fd7afff66</subscriptionId>
-          <resourceGroup>rrpanrg1</resourceGroup>
-          <appName>rrsbwp1</appName>
-          <pricingTier>B1</pricingTier>
-          <region>westus</region>
-          <appServicePlanName>ASP-rrpanrg1-9848</appServicePlanName>
-          <appServicePlanResourceGroup>rrpanrg1</appServicePlanResourceGroup>
-          <runtime>
-            <os>Windows</os>
-            <javaVersion>Java 17</javaVersion>
-            <webContainer>Java SE</webContainer>
-          </runtime>
-          <deployment>
-            <resources>
-              <resource>
-                <directory>${project.basedir}/target</directory>
-                <includes>
-                  <include>*.jar</include>
-                </includes>
-              </resource>
-            </resources>
-          </deployment>
-        </configuration>
-      </plugin>
+      <plugin> 
+        <groupId>com.microsoft.azure</groupId>  
+        <artifactId>azure-webapp-maven-plugin</artifactId>  
+        <version>2.5.0</version>  
+        <configuration> 
+          <schemaVersion>v2</schemaVersion>  
+          <subscriptionId>96a64239-0d04-4f64-818d-1f5fd7afff66</subscriptionId>  
+          <resourceGroup>rrpanrg1</resourceGroup>  
+          <appName>rrpsbwp2</appName>  
+          <pricingTier>B1</pricingTier>  
+          <region>westus</region>  
+          <appServicePlanName>ASP-rrpanrg1-a76f</appServicePlanName>  
+          <appServicePlanResourceGroup>rrpanrg1</appServicePlanResourceGroup>  
+          <runtime> 
+            <os>Windows</os>  
+            <javaVersion>Java 17</javaVersion>  
+            <webContainer>Java SE</webContainer> 
+          </runtime>  
+          <deployment> 
+            <resources> 
+              <resource> 
+                <directory>${project.basedir}/target</directory>  
+                <includes> 
+                  <include>*.jar</include> 
+                </includes> 
+              </resource> 
+            </resources> 
+          </deployment> 
+        </configuration> 
+      </plugin> 
     </plugins> 
   </build> 
 </project>

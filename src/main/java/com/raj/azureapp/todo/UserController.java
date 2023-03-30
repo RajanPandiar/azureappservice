@@ -11,19 +11,10 @@ import java.util.List;
 @RestController
 public class UserController
 {
-    @Autowired
-    UserRepository userRepository;
 
-
-    @GetMapping({"/"})
-    public ResponseEntity<List<User>> getAllUsers() {
-        try{
-            List<User> usersList = new ArrayList<>();
-            userRepository.findAll().forEach(usersList::add);
-            return new ResponseEntity<>(usersList, HttpStatus.OK);
-        }catch (Exception e) {
-            throw new RuntimeException();
-        }
+    @GetMapping("/Hello" )
+    public String getAllUsers() {
+        return "Hello World";
     }
 
 }

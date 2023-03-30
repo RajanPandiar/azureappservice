@@ -15,7 +15,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.Optional;
 
-@ComponentScan("com.raj.azureapp.todo")
 @SpringBootApplication
 public class TodoApplication{
 
