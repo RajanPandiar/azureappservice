@@ -9,14 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/users")
 public class UserController
 {
     @Autowired
     UserRepository userRepository;
 
 
-    @GetMapping(value = "/")
+    @GetMapping({"/"})
     public ResponseEntity<List<User>> getAllUsers() {
         try{
             List<User> usersList = new ArrayList<>();
